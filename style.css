@@ -1,0 +1,389 @@
+/* Import Bengali fonts */
+@font-face {
+    font-family: 'SolaimanLipi';
+    src: url('assets/fonts/SolaimanLipi.ttf') format('truetype');
+}
+
+:root {
+    --primary-color: #e71d36; /* Festive Red */
+    --secondary-color: #ffffff; /* White */
+    --accent-color: #ffc107; /* Gold */
+    --bg-color: #fff1e6;
+    --text-dark: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SolaimanLipi', sans-serif;
+    background-color: var(--bg-color);
+    background-image: url('assets/images/background.jpg');
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* Greeting Card Styles */
+.greeting-card {
+    background-color: var(--secondary-color);
+    background-image: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), 
+                      url('assets/images/alpana-patterns/pattern1.png');
+    border: 8px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.greeting-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeDown 1.5s ease-out;
+}
+
+.card-header h1 {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+
+.card-header h2 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+}
+
+.card-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.wish-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.personalized-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Alpana Design Elements (Corner Decorations) */
+.alpana {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+    background-image: url('assets/images/alpana-patterns/alpana1.png');
+    
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+    background-image: url('assets/images/alpana-patterns/alpana2.png');
+    
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+    background-image: url('assets/images/alpana-patterns/alpana3.png');
+    
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+    background-image: url('assets/images/alpana-patterns/alpana4.png');
+    
+}
+
+/* Control Styles */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+#name-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #c41629;
+    transform: translateY(-2px);
+}
+
+.action-btn {
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+}
+
+.action-btn:hover {
+    background-color: #e5ac00;
+}
+
+.music-icon {
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+/* Animation Styles */
+.animation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Removed .floating-alpanas and .floating-alpana rules */
+
+.balloons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.balloon {
+    position: absolute;
+    animation: floatUp 15s linear infinite;
+}
+
+.fireworks {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: explode 1s forwards;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Kept the float animation for the corner alpanas */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh);
+    }
+    to {
+        transform: translateY(-100px);
+    }
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(30);
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .card-header h1 {
+        font-size: 3rem;
+    }
+    
+    .card-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .alpana {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+
+    .greeting-card {
+        padding: 30px; /* Reduce padding slightly */
+        /* Adjust background size for the pattern image (the second background) */
+        /* Make the pattern repeat at a smaller size on tablets and below */
+        background-size: auto, 60px 60px; /* You might need to adjust '60px 60px' based on your pattern */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .greeting-card {
+        padding: 20px; /* Further reduce padding */
+        border-width: 6px; /* Slightly thinner border */
+        /* Make the pattern even smaller on phones */
+        background-size: auto, 40px 40px; /* Adjust '40px 40px' as needed */
+    }
+    
+    .card-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .card-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .wish-text {
+        font-size: 1.2rem;
+    }
+
+    .personalized-name {
+        font-size: 1.5rem;
+    }
+
+    .alpana {
+        width: 60px; /* Smaller corner alpanas */
+        height: 60px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    #name-input {
+         padding: 10px 12px;
+         font-size: 0.9rem;
+    }
+}
+
+/* Add a special class for the poem formatting */
+.poem {
+    font-style: italic;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--primary-color);
+    font-size: 1.2rem;
+    white-space: pre-line; /* Preserves line breaks from the JS string */
+}
+
+/* Add a special class for the poem formatting */
+.poem {
+    font-style: italic;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--primary-color);
+    font-size: 1.2rem;
+    white-space: pre-line;
+}
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boishakhi Wishes Generator | শুভ নববর্ষ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Greeting Card Section -->
+        <div class="greeting-card">
+            <div class="card-header">
+                <h1>শুভ নববর্ষ</h1>
+                <h2>Shubho Noboborsho</h2>
+            </div>
+            
+            <div class="card-content">
+                <div id="wish" class="wish-text"></div>
+                <div id="personalized-name" class="personalized-name"></div>
+            </div>
+            
+            <!-- Alpana Designs (Decorative Elements) -->
+            <div class="alpana top-left"></div>
+            <div class="alpana top-right"></div>
+            <div class="alpana bottom-left"></div>
+            <div class="alpana bottom-right"></div>
+        </div>
+        
+        <!-- Controls Section -->
+        <div class="controls">
+            <div class="input-group">
+                <input type="text" id="name-input" placeholder="Enter your name...">
+                <button id="generate-btn">Generate Wish</button>
+            </div>
+            <button id="copy-btn" class="action-btn">Copy Wish</button>
+            <button id="music-toggle" class="action-btn">
+                <span class="music-icon">♫</span> 
+                <span id="music-status">Turn On Music</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Animation Elements -->
+    <div class="animation-container">
+        <div class="balloons"></div>
+        <div class="fireworks"></div>
+        <!-- Removed floating-alpanas div -->
+    </div>
+    
+    <!-- Audio Element -->
+    <audio id="background-music" loop>
+        <source src="assets/audio/dhak-beats.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
